@@ -1,2 +1,4 @@
 #!/bin/bash
-echo $(($BEST School))
+BEST="School"
+export BEST
+echo "Created a new global variable named BEST with the value $BEST."
