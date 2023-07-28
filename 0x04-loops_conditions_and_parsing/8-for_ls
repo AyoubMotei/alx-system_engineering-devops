@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# print file names  without the number prefix
+
+for filename in *;
+do
+  echo "$filename" | cut -d '-' -f 2;
+done
+

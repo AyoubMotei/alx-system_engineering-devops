@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#FizzBuzz implementation
+
+current_number=1
+while [ $current_number -ne 101 ]
+do
+    if [ $((current_number % 15)) -eq 0 ]
+    then
+	echo "FizzBuzz"
+    elif [ $((current_number % 3)) -eq 0 ]
+    then
+	echo "Fizz"
+    elif [ $((current_number % 5)) -eq 0 ]
+    then
+        echo "Buzz"
+    else
+	echo $current_number
+    fi
+    ((current_number++))
+
+
