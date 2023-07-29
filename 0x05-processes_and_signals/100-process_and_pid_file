@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script displays the message "To infinity and beyond" with a sleep of 2 seconds in between each iteration.
+# It also sets up signal handlers to respond to specific signals with custom messages.
+
+echo $$ > /var/run/myscript.pid
+trap 'echo "I hate the kill command"; rm -rf /var/run/myscript.pid; exit' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
