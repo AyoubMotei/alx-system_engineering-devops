@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
-#  Displays Fizz, Buzz, FizzBuzz, or numbers from 1 to 100 based on specific conditions.
+# Displays Fizz, Buzz, FizzBuzz, or numbers from 1 to 100 based on specific conditions.
 
 counter=1
+
 while [ $counter -lt 101 ]
 do
-    if [ $((counter%15)) = 0 ]
-    then
-        echo "FizzBuzz"
-    elif [ $((counter%3)) = 0 ]
-    then
-        echo "Fizz"
-    elif [ $((counter%5)) = 0 ]
-    then
-        echo "Buzz"
-    else
-        echo "$counter"
-    fi
-    let counter+=1
+	if [ $((counter%15)) = 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((counter%3)) = 0 ]
+	then
+		echo "Fizz"
+	elif [ $((counter%5)) = 0 ]
+	then
+		echo "Buzz"
+	else
+		echo "$counter"
+	fi
+	counter=$(( counter + 1))
 done
