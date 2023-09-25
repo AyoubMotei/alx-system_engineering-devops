@@ -1,12 +1,10 @@
-# Puppet script to create ssh config file
-file_line { 'Turn off passwd auth':
-  ensure => 'present',
-  path   => '/etc/ssh/ssh_config',
-  line   => '    PasswordAuthentication no',
-}
+# Set up server configuration with puppet
 
-file_line { 'Declare identity file':
-  ensure => 'present',
-  path   => '/etc/ssh/ssh_config',
-  line   => '    IdentityFile ~/.ssh/school',
+file_line{'Set alias name':
+  path => '/etc/ssh/ssh_config',
+  line => 'ayoub_server
+    HostName 100.25.165.189
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no',
 }
